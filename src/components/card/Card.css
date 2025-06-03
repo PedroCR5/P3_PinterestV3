@@ -1,0 +1,173 @@
+.cardDiv {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+}
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upImg {
+  background-image: url(/assets/upImage.png);
+  width: 30px;
+  height: 30px;
+  grid-area: 'image';
+  display: flex;
+  margin-left: 30%;
+}
+.imageDiv0 {
+  display: flex;
+  stroke-opacity: 50%;
+}
+.cardImgDiv {
+  border-radius: 10%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  margin: 5px;
+}
+.cardBottomPart {
+  display: flex;
+  display: grid;
+  grid-template-areas:
+    'person person'
+    'name name'
+    'image date';
+  justify-content: space-evenly;
+  margin-top: 10%;
+  justify-items: center;
+}
+.name {
+  display: flex;
+  justify-content: center;
+  grid-area: name;
+  font-weight: bold;
+  font-size: large;
+}
+.date {
+  display: flex;
+  justify-content: space-around;
+  grid-area: date;
+  margin-right: 50%;
+  align-items: center;
+  font-weight: bold;
+}
+.upImg:hover {
+  transform: translate(-0.5em, -0.3em) scale(1.05);
+  transition: 0.3s;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 5%;
+  font-size: larger;
+}
+.visitsBox {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0%;
+  align-items: center;
+  margin: 25%;
+  font-size: small;
+  flex-direction: column;
+  justify-content: center;
+}
+.initialIconsBox {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5%;
+  margin: 5%;
+  justify-content: center;
+  width: 40%;
+  height: 30%;
+  opacity: 100%;
+}
+.off {
+  padding: 5%;
+  margin-right: 1%;
+}
+.heart,
+.camera {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 100%;
+  border-radius: 50%;
+}
+.imgHeart,
+.imgCamera {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20%;
+  height: 90%;
+  opacity: 100%;
+}
+.visitar {
+  color: var(--rtc-text-2);
+  background-color: var(--rtc-bgColor3);
+  padding-left: 30%;
+  padding-right: 30%;
+  width: 150%;
+  border-radius: 22%;
+  overflow-x: visible;
+  font-weight: bold;
+  font-size: small;
+  border-radius: 47%;
+}
+.personBox {
+  display: flex;
+  text-align: center;
+}
+.imgPersonDiv {
+  display: flex;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.imageDiv0 {
+  --opacidad-negro: 0.5;
+  display: flex;
+  justify-content: center;
+}
+.imgPersonRound {
+  cursor: pointer;
+  grid-area: person;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: solid;
+  border-radius: 50%;
+  max-width: 20%;
+  border-width: 5px;
+  margin-top: -30%;
+}
+.imgPersonRound:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+#miImagenCanvas0 {
+  grid-area: person;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: solid;
+  border-radius: 50%;
+  max-width: 25%;
+  border-width: 10px;
+  margin-top: -30%;
+}
