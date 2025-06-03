@@ -11,6 +11,8 @@ export { element1Src, element2Src, elementName1InnerText, elementName2InnerText 
 let firstWord = 'nada de nada';
 
 
+
+
 //! Traer info de personas
 let firstPerson = await getImagesPerson('man');
 let secondPerson = await getImagesPerson('person');
