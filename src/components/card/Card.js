@@ -50,17 +50,4 @@ export function createCards(imagesList) {
     imgButtonCamera.innerHTML = `<img class="imgCamera" src="./assets/camera.png" alt="pinterest">
           <span class="likesHeart">+53</span>`
   }
-  //! Incluir foto y nombres de personas en las cartas
-  for (let k = 0; k < 4; k++) {
-    const element1 = document.getElementById(`miImagenCanvas${k}`);
-    element1.src = element1Src;
-    const elementName1 = document.querySelector(`.cardPUser${k}`);
-    elementName1.innerText = elementName1InnerText;
-  }
-  for (let k = 4; k < 10; k++) {
-    const element2 = document.getElementById(`miImagenCanvas${k}`);
-    element2.src = element2Src;
-    const elementName2 = document.querySelector(`.cardPUser${k}`);
-    elementName2.innerText = elementName2InnerText;
-  }
 }

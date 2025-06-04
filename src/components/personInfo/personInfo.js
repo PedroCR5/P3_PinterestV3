@@ -1,4 +1,4 @@
-import { accesKey, endPoint } from "../../../main";
+/* import { accesKey, endPoint } from "../../../main";
 export { element1Src, element2Src, elementName1InnerText, elementName2InnerText };
 
 let element1Src;
@@ -31,4 +31,4 @@ export async function getImagesPerson(queryPerson) {
     let secondPerson = imagesListP;
     return secondPerson;
   }
-}
+} */
