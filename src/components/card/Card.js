@@ -1,5 +1,5 @@
 import { createButton } from "../button/button";
-import { element1Src, element2Src, elementName1InnerText, elementName2InnerText } from "../../../main";
+//import { element1Src, element2Src, elementName1InnerText, elementName2InnerText } from "../../../personInfo";
 import "./card.css";
 
 //! Color

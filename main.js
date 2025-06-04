@@ -59,36 +59,64 @@ Un saludo! */
 
 import './style.css';
 import { createButton } from './src/components/button/button';
-import { getImagesPerson } from './src/components/personInfo/personInfo';
+//import { infoPersons } from './src/components/personInfo/personInfo';
 import { getImages } from './src/components/infoAPI/infoAPI';
 import { funcionAEjecutar } from './src/components/modal/modal';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
-export { element1Src, element2Src, elementName1InnerText, elementName2InnerText };
+//export { element1Src, element2Src, elementName1InnerText, elementName2InnerText };
 
 //!Variables
 let firstWord = 'nada de nada';
 
-
 //! Traer info de personas
-let firstPerson = await getImagesPerson('man');
-let secondPerson = await getImagesPerson('person');
-let element1Src = firstPerson[0].urls.small;
-let elementName1InnerText = firstPerson[0].user.first_name + " " + firstPerson[0].user.last_name;
-let element2Src = secondPerson[0].urls.small;
-let elementName2InnerText = secondPerson[8].user.first_name + " " + secondPerson[0].user.last_name;
+//infoPersons();
 
 //! Pinto el HTML
 const divApp = document.querySelector("#app");
+const header = document.createElement("header");
+const headerContainer = document.createElement("div");
+const iconePinterest = document.createElement("img");
+const headerSearchContainer = document.createElement("div");
+const searchIcon = document.createElement("span");
+const inputInfo = document.createElement("input");
+const campana = document.createElement("img");
+const consultas = document.createElement("img");
+const buttonCustomer = document.createElement("button");
+
+
+
+
+headerContainer.class = "headerContainer";
+iconePinterest.class = "iconePinterest";
+iconePinterest.src = "./assets/pinterest_logo.png";
+iconePinterest.alt = "Pinterest";
+headerSearchContainer.class = "headerSearchContainer";
+searchIcon.class = "icon";
+inputInfo.class = "inputInfo";
+inputInfo.id = "word";
+inputInfo.type = "text";
+inputInfo.placeholder = " Buscar...";
+campana.class = "desktopIconCampana iconePinterest";
+campana.src = "./assets/campana.png";
+campana.alt = "campana";
+consultas.class = "desktopIconComments iconePinterest";
+consultas.src = "./assets/comentarios.png";
+consultas.alt = "comentarios";
+headerContainer.innerHTML = `${createButton({ texto: "D", size: "s", classInfo: "upRightButton buttonInfo1" })}`;
+
+
+/* <div class="desktopHeader">
+      ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial buttonInfo1` })}
+      ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton buttonInfo1` })}
+      ${createButton({ texto: "Crear", size: "s", classInfo: `desktopButton buttonInfo1` })}
+    </div> */
+
 divApp.innerHTML =
   `<header>
   <div class="headerContainer">
     <img class="iconePinterest" src="./assets/pinterest_logo.png" alt="pinterest">
-    <div class="desktopHeader">
-        ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial buttonInfo1` })}
-        ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton buttonInfo1` })}
-        ${createButton({ texto: "Crear", size: "s", classInfo: `desktopButton buttonInfo1` })}
-      </div>
+  
     <div class="headerSearchContainer">
       <span class="icon">🔍</span>
       <input class="inputInfo" id="word" type="text" placeholder=" Buscar...">
