@@ -56,6 +56,8 @@ La primera búsqueda que haces funciona, no es la más eficiente, pero al menos 
 Te vuelvo a corregir cuando implementes algo más parecido a lo que te acabo de dejar. Investiga un poco más, y ánimo con ello.
 
 Un saludo! */
+//? Modal meterle info svh
+//? Animación para algún img, @keyframes
 
 import './style.css';
 import { createButton } from './src/components/button/button';
