@@ -1,5 +1,4 @@
 import { createButton } from "../button/button";
-//import { element1Src, element2Src, elementName1InnerText, elementName2InnerText } from "../../../personInfo";
 import "./card.css";
 
 //! Color
@@ -15,21 +14,24 @@ export function createCards(imagesList) {
   divMainContainer1.innerHTML = ``;
   for (let i = 0; i < imagesList.length; i++) {
     let imgParaUsar = imagesList[i].urls.thumb;
+    let imgParaUsarPersona = imagesList[i].user.profile_image.large;
     const randomColorImg = getRandomColor();
+    console.log(imagesList[i].likes);
+
     divMainContainer1.innerHTML +=
       `<div class="cardDiv">
           <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); ">
             <img class="imgImageDiv${i}" />
             <div class="initialIconsBox">
-                    ${createButton({ texto: "+53", size: "s", classInfo: `camera off on${i}` })}
+                    ${createButton({ size: "s", classInfo: `camera off on${i}` })}
               <div class="visitsBox">
                 ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center on${i}` })}
               </div>
-              ${createButton({ texto: `${imagesList[i].likes}`, size: "s", classInfo: `heart off on${i}` })}
+              ${createButton({ size: "s", classInfo: `heart off on${i}` })}
             </div>
           </div>  
           <div class="cardBottomPart">
-            <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsar}" style="border-color: ${randomColorImg}"/>
+            <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsarPersona}" style="border-color: ${randomColorImg}"/>
             <p class="cardPUser${i} name"> </p>
             <img src="./assets/upImage.png" class="upImg" />
             <p class="cardPDate${i} date"> </p>
@@ -45,9 +47,9 @@ export function createCards(imagesList) {
     cardPDate.innerText = `${day}/${month}/${year}`;
     const imgButtonHeart = document.querySelector(`.heart`);
     imgButtonHeart.innerHTML = `<img class="imgHeart" src="./assets/heart.png" alt="pinterest">
-          <span class="likesHeart">${imagesList[i].likes}</span>`
+          <span class="likesHeart">${imagesList[0].likes}</span>`
     const imgButtonCamera = document.querySelector(`.camera`);
     imgButtonCamera.innerHTML = `<img class="imgCamera" src="./assets/camera.png" alt="pinterest">
-          <span class="likesHeart">+53</span>`
+          <span class="likesHeart">+${imagesList[i].user.total_photos}</span>`
   }
 }
