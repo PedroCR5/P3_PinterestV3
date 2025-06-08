@@ -14,16 +14,16 @@ export function createCards(imagesList) {
     const randomColorImg = getRandomColor();
     document.querySelector("#containerCards").innerHTML +=
       `<div class="cardDiv">
-          <div class="imageDiv cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${image.urls.thumb}'); ">
-            <img class="imgImageDiv" />
+          <div class="cardImgDiv" >
+            <img class="imgImageDiv" src="${image.urls.thumb}")/>
             <div class="initialIconsBox">
-              <img class="imgCamera camera off on " src="./assets/camera.png" alt="pinterest">
+              <img class="imgCamera off">
               <span class="likesHeart">+${image.user.total_photos}</span>
               <div class="visitsBox">
                 ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center on` })}
               </div>
-              <img class="imgHeart heart off on" src="./assets/heart.png" alt="pinterest">
-          <span class="likesHeart">${image.likes}</span>
+              <img class="imgHeart off">
+              <span class="likesHeart">${image.likes}</span>
             </div>
           </div>  
           <div class="cardBottomPart">
@@ -34,6 +34,17 @@ export function createCards(imagesList) {
           </div>
         </div>`;
   });
+
+  //Elementos comunes a las Cards
+  let imgCameraFile = document.getElementsByClassName(`imgCamera`);
+  imgCameraFile.src = "./assets/camera.png";
+  let imgHeartFile = document.getElementsByClassName(`imgHeart`);
+  imgHeartFile.src = "./assets/heart.png";
+  /* 
+  let buttonNotification = document.getElementsByClassName(`tryAgain`);
+  buttonNotification[0].innerHTML = `¡Pulsa para intentarlo de nuevo!`;
+ */
+
   /*  for (let i = 0; i < imagesList.length; i++) {
      
      const randomColorImg = getRandomColor();
