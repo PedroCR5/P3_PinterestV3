@@ -11,35 +11,52 @@ function getRandomColor() {
 export function createCards(imagesList) {
   document.querySelector("#containerCards").innerHTML = ` `;
   imagesList.forEach(image => {
-    const randomColorImg = getRandomColor();
+
     document.querySelector("#containerCards").innerHTML +=
       `<div class="cardDiv">
           <div class="cardImgDiv" >
-            <img class="imgImageDiv" src="${image.urls.thumb}")/>
+            <img class="imgImageDiv"/>
             <div class="initialIconsBox">
-              <img class="imgCamera off">
-              <span class="likesHeart">+${image.user.total_photos}</span>
-              <div class="visitsBox">
-                ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center on` })}
-              </div>
-              <img class="imgHeart off">
-              <span class="likesHeart">${image.likes}</span>
+              <span class="camera">+${image.user.total_photos}</span>
+              ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
+              <span class="likes">${image.likes}</span>
             </div>
           </div>  
           <div class="cardBottomPart">
-            <img class="imgPersonRound" id="miImagenCanvas" src="${image.user.profile_image.large}" style="border-color: ${randomColorImg}"/>
-            <p class="cardPUser name">${image.user.name} </p>
-            <img src="./assets/upImage.png" class="upImg" />
-            <p class="cardPDate date">${image.created_at.substring(0, 10)} </p>
+            <img class="imgPersonRound"/>
+            <p class="name"></p>
+            <img class="upImg" />
+            <p class="date"></p>
           </div>
         </div>`;
+
+    // Información de cada carta
+    let imgPersonRoundFile = document.getElementsByClassName(`imgPersonRound`);
+    imgPersonRoundFile.src = "image.user.profile_image.large";
+    // console.log(image.user.profile_image.large);
+    imgPersonRoundFile.bordercolor = "grey";
+    let imgImageDivFile = document.getElementsByClassName(`imgImageDiv`);
+    imgImageDivFile.src = `image.urls.thumb`;
+    let nameFile = document.getElementsByClassName(`name`);
+    nameFile.src = "aaa000";
+    nameFile.tex
+    let imgCameraFile = document.getElementsByClassName(`camera`);
+    imgCameraFile.content = "hola";
+    /*  ${ image.user.name }; */
+
+
+    /* ${image.created_at.substring(0, 10)} 
+     */
   });
 
+  /*   src="${image.user.profile_image.large}" style="border-color: ${randomColorImg}" */
   //Elementos comunes a las Cards
-  let imgCameraFile = document.getElementsByClassName(`imgCamera`);
-  imgCameraFile.src = "./assets/camera.png";
-  let imgHeartFile = document.getElementsByClassName(`imgHeart`);
-  imgHeartFile.src = "./assets/heart.png";
+  /*   let upImgFile = document.getElementsByClassName(`upImg`);
+    upImgFile.src = "./assets/upImage.png";
+    let imgCameraFile = document.getElementsByClassName(`camera`);
+    imgCameraFile.src = "./assets/camera.png";
+    let imgLikesFile = document.getElementsByClassName(`likes`);
+    imgLikesFile.src = "./assets/heart.png"; */
   /* 
   let buttonNotification = document.getElementsByClassName(`tryAgain`);
   buttonNotification[0].innerHTML = `¡Pulsa para intentarlo de nuevo!`;

@@ -39,8 +39,8 @@
   height: 30%;
   opacity: 100%;
 }
-.imgHeart,
-.imgCamera {
+.likes,
+.camera {
   display: flex;
   overflow: hidden;
   position: relative;
@@ -62,6 +62,22 @@
   margin-right: 1%;
 }
 
+.camera {
+  background-image: url(/assets/camera.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: cover; */
+  width: 110%;
+  height: auto;
+}
+
+.likes {
+  background-image: url(/assets/heart.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .cardInfo {
   display: flex;
   flex-direction: column;
@@ -69,6 +85,9 @@
 }
 .upImg {
   background-image: url(/assets/upImage.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 30px;
   height: 30px;
   grid-area: 'image';
