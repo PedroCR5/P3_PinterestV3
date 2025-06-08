@@ -1,3 +1,84 @@
+import './style.css';
+import { getImages } from './src/components/infoAPI/infoAPI';
+import { funcionAEjecutar } from './src/components/modal/modal';
+import { pintarHTML } from './src/components/personInfo/personInfo';
+export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
+export const endPoint = 'https://api.unsplash.com/search/photos';
+
+//!Variables
+let firstWord = 'nada de nada';
+
+//! Pinto el HTML
+pintarHTML();
+
+//! El modal
+const modalButton = document.querySelector(".tryAgain");
+modalButton.addEventListener("click", funcionAEjecutar);
+
+//!Traer información inicial de la API
+getImages('dog');
+
+//!Leer palabra de busqueda y traer de la API
+document.getElementById('word').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    const valorInput = event.target.value;
+    if (firstWord === 'nada de nada') {
+      firstWord = event.target.value;
+    }
+    getImages(`${valorInput}`);
+    event.target.value = '';
+  }
+});
+
+//! Pinchar en icono Pinterest para refrescar la primera búsqueda
+document.querySelector(`.iconePinterest`).onclick = function () {
+  if (firstWord === 'nada de nada') {
+    getImages('cat');
+  }
+  else {
+    getImages(firstWord)
+  };
+};
+
+/* const header = document.createElement("header");
+const headerContainer = document.createElement("div");
+const iconePinterest = document.createElement("img");
+const headerSearchContainer = document.createElement("div");
+const searchIcon = document.createElement("span");
+const inputInfo = document.createElement("input");
+const campana = document.createElement("img");
+const consultas = document.createElement("img");
+const buttonCustomer = document.createElement("button");
+
+
+
+
+headerContainer.class = "headerContainer";
+iconePinterest.class = "iconePinterest";
+iconePinterest.src = "./assets/pinterest_logo.png";
+iconePinterest.alt = "Pinterest";
+headerSearchContainer.class = "headerSearchContainer";
+searchIcon.class = "icon";
+inputInfo.class = "inputInfo";
+inputInfo.id = "word";
+inputInfo.type = "text";
+inputInfo.placeholder = " Buscar...";
+campana.class = "desktopIconCampana iconePinterest";
+campana.src = "./assets/campana.png";
+campana.alt = "campana";
+consultas.class = "desktopIconComments iconePinterest";
+consultas.src = "./assets/comentarios.png";
+consultas.alt = "comentarios";
+headerContainer.innerHTML = `${createButton({ texto: "D", size: "s", classInfo: "upRightButton buttonInfo1" })}`; */
+
+
+/* <div class="desktopHeader">
+      ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial buttonInfo1` })}
+      ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton buttonInfo1` })}
+      ${createButton({ texto: "Crear", size: "s", classInfo: `desktopButton buttonInfo1` })}
+    </div> */
+
+
 /* Buenas Pedro,
 
 Estoy revisando tu proyecto por segunda vez y veo que todavía no estás dando con lo esencial. Da la sensación de que tienes bastante confusión con varios conceptos, y no termino de entender de dónde los has sacado, pero la mayoría están mal enfocados.
@@ -16,7 +97,7 @@ Pero lo más preocupante es cómo estás iterando los datos de las peticiones:
 
 Estás haciendo la iteración dentro de la función, pasándole el resultado directamente. Eso ya es raro, pero vale, podría pasar. El problema es cómo lo haces: usas un for loop, concatenas todo mezclando lógica de pintado con botones, backgrounds, dejas un img vacío pero lo creas igual… Coges fechas, haces substrings, botones de like, cámara… todo metido a la vez, sin orden ni claridad.
 
-Y luego haces dos loops, uno de 4 y otro de 10, que sinceramente, sigo sin entender para qué.
+//Y luego haces dos loops, uno de 4 y otro de 10, que sinceramente, sigo sin entender para qué.
 
 Te voy a resumir cómo deberías plantearlo desde la HOME y, sobre todo, desde el punto en el que recibes los datos. La API te devuelve 10 elementos ahora, y deberías pintarlos con una iteración limpia y coherente, usando los datos originales de forma simple.
 
@@ -58,112 +139,6 @@ Te vuelvo a corregir cuando implementes algo más parecido a lo que te acabo de 
 Un saludo! */
 //? Modal meterle info svh
 //? Animación para algún img, @keyframes
-
-import './style.css';
-import { createButton } from './src/components/button/button';
-//import { infoPersons } from './src/components/personInfo/personInfo';
-import { getImages } from './src/components/infoAPI/infoAPI';
-import { funcionAEjecutar } from './src/components/modal/modal';
-export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
-export const endPoint = 'https://api.unsplash.com/search/photos';
-//export { element1Src, element2Src, elementName1InnerText, elementName2InnerText };
-
-//!Variables
-let firstWord = 'nada de nada';
-
-//! Traer info de personas
-//infoPersons();
-
-//! Pinto el HTML
-const divApp = document.querySelector("#app");
-const header = document.createElement("header");
-const headerContainer = document.createElement("div");
-const iconePinterest = document.createElement("img");
-const headerSearchContainer = document.createElement("div");
-const searchIcon = document.createElement("span");
-const inputInfo = document.createElement("input");
-const campana = document.createElement("img");
-const consultas = document.createElement("img");
-const buttonCustomer = document.createElement("button");
-
-
-
-
-headerContainer.class = "headerContainer";
-iconePinterest.class = "iconePinterest";
-iconePinterest.src = "./assets/pinterest_logo.png";
-iconePinterest.alt = "Pinterest";
-headerSearchContainer.class = "headerSearchContainer";
-searchIcon.class = "icon";
-inputInfo.class = "inputInfo";
-inputInfo.id = "word";
-inputInfo.type = "text";
-inputInfo.placeholder = " Buscar...";
-campana.class = "desktopIconCampana iconePinterest";
-campana.src = "./assets/campana.png";
-campana.alt = "campana";
-consultas.class = "desktopIconComments iconePinterest";
-consultas.src = "./assets/comentarios.png";
-consultas.alt = "comentarios";
-headerContainer.innerHTML = `${createButton({ texto: "D", size: "s", classInfo: "upRightButton buttonInfo1" })}`;
-
-
-/* <div class="desktopHeader">
-      ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial buttonInfo1` })}
-      ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton buttonInfo1` })}
-      ${createButton({ texto: "Crear", size: "s", classInfo: `desktopButton buttonInfo1` })}
-    </div> */
-
-divApp.innerHTML =
-  `<header>
-  <div class="headerContainer">
-    <img class="iconePinterest" src="./assets/pinterest_logo.png" alt="pinterest">
-  
-    <div class="headerSearchContainer">
-      <span class="icon">🔍</span>
-      <input class="inputInfo" id="word" type="text" placeholder=" Buscar...">
-    </div>
-        <img class="desktopIconCampana iconePinterest" src="./assets/campana.png" alt="campana">
-        <img class="desktopIconComments iconePinterest" src="./assets/comentarios.png" alt="comentarios">
-    ${createButton({ texto: "D", size: "s", classInfo: "upRightButton buttonInfo1" })}
-  </div>
-</header> 
-<div class="myDiv"></div>
-<main> 
-<div class="notification" id="notification">
-  <h2 class="notificationH2">¡Busqueda errónea!, por favor inténtalo con palabras como gato, perro...</h2>
-  ${createButton({ texto: "Pulsa aquí para intentarlo de nuevo", size: "s", classInfo: `tryAgain` })}
-</div>
-<div class="mainContainerCards2">
-  <div class="container1 containersList" id="div1"> </div>
-</div> 
-</main>`;
-
-//! El modal
-const modalButton = document.querySelector(".tryAgain");
-modalButton.addEventListener("click", funcionAEjecutar);
-
-//!Traer información inicial de la API
-getImages('dog');
-
-//!Leer palabra de busqueda y traer de la API
-document.getElementById('word').addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    const valorInput = event.target.value;
-    if (firstWord === 'nada de nada') {
-      firstWord = event.target.value;
-    }
-    getImages(`${valorInput}`);
-    event.target.value = '';
-  }
-});
-
-//! Pinchar en icono Pinterest para refrescar la primera búsqueda
-document.querySelector(`.iconePinterest`).onclick = function () {
-  if (firstWord === 'nada de nada') {
-    getImages('cat');
-  }
-  else {
-    getImages(firstWord)
-  };
-};
+//? que no salga erroe al pinchar en logo Pinterest
+//? eliminar clases innecesarias
+//? simplificar los css

@@ -121,12 +121,12 @@
   z-index: 1;
   opacity: 0.95;
 }
-.mainContainerCards2 {
+/* .mainContainerCards2 {
   display: grid;
   grid-auto-columns: minmax(100px, auto);
   grid-auto-flow: column dense;
-}
-.containersList {
+} */
+#containerCards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1px;
