@@ -3,13 +3,13 @@ export function pintarHTML() {
   document.querySelector("#app").innerHTML =
     `<header>
       <div class="headerContainer">
-        <img class="iconePinterest" src="./assets/pinterest_logo.png" alt="pinterest">
+        <img class="iconePinterest">
         <div class="headerSearchContainer">
           <span class="icon">🔍</span>
           <input class="inputInfo" id="word" type="text" placeholder=" Buscar...">
         </div>
-        <img class="desktopIconCampana iconePinterest" src="./assets/campana.png" alt="campana">
-        <img class="desktopIconComments iconePinterest" src="./assets/comentarios.png" alt="comentarios">
+        <img class="desktopIconCampana">
+        <img class="desktopIconComments">
         ${createButton({ texto: "D", size: "s", classInfo: "upRightButton buttonInfo1" })}
       </div>
     </header> 

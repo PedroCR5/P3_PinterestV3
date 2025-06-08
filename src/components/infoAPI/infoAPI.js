@@ -5,7 +5,7 @@ export async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-  console.log(imagesList);
+  //console.log(imagesList);
 
   if (imagesList.length === 0) {
     getImages('gatos');
@@ -16,4 +16,4 @@ export async function getImages(query) {
     createCards(imagesList);
   }
 }
-console.log(imagesList);
+//console.log(imagesList);

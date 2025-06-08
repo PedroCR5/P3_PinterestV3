@@ -36,6 +36,10 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--pc-primary-font);
 }
 #app {
   background-color: var(--rtc-bgColor);
@@ -46,15 +50,38 @@
   justify-content: space-around;
   align-items: center;
   padding: 1%;
+  /* background-color: white;
+  outline-color: green;
+  border-color: red; */
 }
-.iconePinterest {
+.iconePinterest,
+.desktopIconCampana,
+.desktopIconComments {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  /*   background-color: white;
+  outline-color: green;
+  border-color: red; */
 }
-.iconePinterest:hover {
+.iconePinterest:hover,
+.desktopIconCampana:hover,
+.desktopIconComments:hover {
   transform: scale(1.05) skew(-5deg);
 }
+.iconePinterest {
+  background-image: url('/assets/pinterest_logo.png');
+}
+.desktopIconCampana {
+  background-image: url('/assets/campana.png');
+}
+.desktopIconComments {
+  background-image: url('/assets/comentarios.png');
+}
+
 .headerSearchContainer {
   display: flex;
   background-color: var(--rtc-bgColor2);
@@ -96,9 +123,7 @@
 .initial {
   color: var(--rtc-bgColor);
 }
-.desktopIconCampana {
-  background-image: url('/assets/campana.png');
-}
+
 /* Main */
 .main {
   display: grid;

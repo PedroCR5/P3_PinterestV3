@@ -1,24 +1,24 @@
 import './style.css';
 import { getImages } from './src/components/infoAPI/infoAPI';
 import { funcionAEjecutar } from './src/components/modal/modal';
-import { pintarHTML } from './src/components/personInfo/personInfo';
+import { pintarHTML } from './src/components/home/home';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
 
-//!Variables
+//Variables
 let firstWord = 'nada de nada';
 
-//! Pinto el HTML
+// Pinto el HTML
 pintarHTML();
 
-//! El modal
+// El modal
 const modalButton = document.querySelector(".tryAgain");
 modalButton.addEventListener("click", funcionAEjecutar);
 
-//!Traer información inicial de la API
+//Traer información inicial de la API y pintarla
 getImages('dog');
 
-//!Leer palabra de busqueda y traer de la API
+//Leer palabra de busqueda, traer info de la API y pintar las Cards.
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
@@ -30,7 +30,7 @@ document.getElementById('word').addEventListener('keydown', function (event) {
   }
 });
 
-//! Pinchar en icono Pinterest para refrescar la primera búsqueda
+// Pinchar en icono Pinterest para refrescar la primera búsqueda
 document.querySelector(`.iconePinterest`).onclick = function () {
   if (firstWord === 'nada de nada') {
     getImages('cat');
@@ -39,37 +39,6 @@ document.querySelector(`.iconePinterest`).onclick = function () {
     getImages(firstWord)
   };
 };
-
-/* const header = document.createElement("header");
-const headerContainer = document.createElement("div");
-const iconePinterest = document.createElement("img");
-const headerSearchContainer = document.createElement("div");
-const searchIcon = document.createElement("span");
-const inputInfo = document.createElement("input");
-const campana = document.createElement("img");
-const consultas = document.createElement("img");
-const buttonCustomer = document.createElement("button");
-
-
-
-
-headerContainer.class = "headerContainer";
-iconePinterest.class = "iconePinterest";
-iconePinterest.src = "./assets/pinterest_logo.png";
-iconePinterest.alt = "Pinterest";
-headerSearchContainer.class = "headerSearchContainer";
-searchIcon.class = "icon";
-inputInfo.class = "inputInfo";
-inputInfo.id = "word";
-inputInfo.type = "text";
-inputInfo.placeholder = " Buscar...";
-campana.class = "desktopIconCampana iconePinterest";
-campana.src = "./assets/campana.png";
-campana.alt = "campana";
-consultas.class = "desktopIconComments iconePinterest";
-consultas.src = "./assets/comentarios.png";
-consultas.alt = "comentarios";
-headerContainer.innerHTML = `${createButton({ texto: "D", size: "s", classInfo: "upRightButton buttonInfo1" })}`; */
 
 
 /* <div class="desktopHeader">
@@ -87,7 +56,7 @@ La única funcionalidad que está bien es el tema de las peticiones. El resto, s
 
 Empezamos por el main.js:
 
-Tienes variables como element1Src, intertext… que no deberían estar ahí.
+//Tienes variables como element1Src, intertext… que no deberían estar ahí.
 El pintado de la página principal lo estás haciendo todo con template literals, que se puede, pero tienes muchos fallos: repetición de IDs, clases mal puestas, semántica poco clara…
 Un punto positivo es tu componente createButton, que no está mal.
 Luego tienes la lógica del modal de error y el buscador, que más o menos vale.
