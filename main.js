@@ -10,10 +10,13 @@ let firstWord = 'nada de nada';
 
 // Pinto el HTML
 pintarHTML();
+document.getElementById('word').placeholder = "Buscar...";
 
 // El modal
 const modalButton = document.querySelector(".tryAgain");
 modalButton.addEventListener("click", funcionAEjecutar);
+document.getElementsByClassName('notificationH2').type = "text";
+//document.getElementsByClassName('notificationH2').innerHTML = "text";
 
 //Traer información inicial de la API y pintarla
 getImages('dog');

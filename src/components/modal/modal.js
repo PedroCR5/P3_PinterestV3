@@ -1,4 +1,5 @@
+import "./modal.css";
 export function funcionAEjecutar() {
-  const notificationModal = document.querySelector(".notification");
+  const notificationModal = document.querySelector("#notification");
   notificationModal.style.display = 'none';
 }

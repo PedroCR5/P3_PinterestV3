@@ -1,3 +1,4 @@
+import "./infoAPI.css";
 import { createCards } from "../card/Card";
 import { endPoint, accesKey } from "../../../main";
 let imagesList = {}

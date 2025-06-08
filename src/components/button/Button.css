@@ -53,12 +53,7 @@ button {
   width: 150%;
   border-radius: 50%;
 }
-.upRightButton {
-  font-size: large;
-}
-.upRightButton:hover {
-  transform: scale(1.05) skew(-5deg);
-}
+
 .initial {
   background-color: black;
 }
