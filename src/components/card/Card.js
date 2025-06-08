@@ -1,14 +1,13 @@
 import { createButton } from "../button/button";
 import "./card.css";
-
-//! Color
+// Color
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
 }
-//! Función crear cartas
+// Función crear cartas
 export function createCards(imagesList) {
   document.querySelector("#containerCards").innerHTML = ` `;
   imagesList.forEach(image => {

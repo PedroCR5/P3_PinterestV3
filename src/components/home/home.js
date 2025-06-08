@@ -1,5 +1,6 @@
 import "./home.css";
 import { createButton } from "../button/button";
+//Pintar el HTML
 export function pintarHTML() {
   document.querySelector("#app").innerHTML =
     `<header>
@@ -16,10 +17,14 @@ export function pintarHTML() {
     </header> 
     <main> 
       <div id="notification">
-        <h2 class="notificationH2">¡Busqueda errónea!, por favor inténtalo con palabras como gato, perro...</h2>
-        ${createButton({ texto: "Pulsa aquí para intentarlo de nuevo", size: "s", classInfo: `tryAgain` })}
+        <h2 class="notificationH2"></h2>
+        ${createButton({ size: "s", classInfo: `tryAgain` })}
       </div>
       <div id="containerCards"> </div>
     </main>`;
-
 };
+//Completar el header
+export function completarHeader() {
+  document.getElementById('word').placeholder = "Buscar...";
+}
+

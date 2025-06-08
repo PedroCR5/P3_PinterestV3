@@ -1,7 +1,7 @@
 import './style.css';
 import { getImages } from './src/components/infoAPI/infoAPI';
-import { funcionAEjecutar } from './src/components/modal/modal';
-import { pintarHTML } from './src/components/home/home';
+import { funcionAEjecutar, prepararElModal } from './src/components/modal/modal';
+import { completarHeader, pintarHTML } from './src/components/home/home';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
 
@@ -10,18 +10,18 @@ let firstWord = 'nada de nada';
 
 // Pinto el HTML
 pintarHTML();
-document.getElementById('word').placeholder = "Buscar...";
+completarHeader();
 
 // El modal
+prepararElModal();
 const modalButton = document.querySelector(".tryAgain");
 modalButton.addEventListener("click", funcionAEjecutar);
-document.getElementsByClassName('notificationH2').type = "text";
-//document.getElementsByClassName('notificationH2').innerHTML = "text";
+
 
 //Traer información inicial de la API y pintarla
 getImages('dog');
 
-//Leer palabra de busqueda, traer info de la API y pintar las Cards.
+//Guardo la primera palabra de busqueda, voy a infoAPI.js para recoger la info y pinto las Cards en Card.js.
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
