@@ -16,6 +16,12 @@ export function pintarHTML() {
       </div>
     </header> 
     <main> 
+    <div class="pruebaContainer">
+            <img class="imgPersonRound1" src = './assets/lupa.png'/>
+            <p id="name1">hola</p>
+            <img class="upImg1" />
+            <p class="date1">fecha</p>
+          </div>
       <div id="notification">
         <h2 class="notificationH2"></h2>
         ${createButton({ size: "s", classInfo: `tryAgain` })}
@@ -23,6 +29,25 @@ export function pintarHTML() {
       <div id="containerCards"> </div>
     </main>`;
 };
+//pruebas
+let imgPersonRoundFile1 = document.getElementsByClassName(`imgPersonRound1`);
+//console.log(imgPersonRoundFile);
+//console.log(image.user.profile_image.large);
+imgPersonRoundFile1.width = "400px";
+imgPersonRoundFile1.height = "400px";
+
+imgPersonRoundFile1.src = './assets/lupa.png';
+console.log(imgPersonRoundFile1.src);
+let name1Text = document.getElementById("name1");
+
+//name1Text.textContent = `ddd`;
+console.log(name1Text);
+
+let date11 = document.getElementsByClassName("name1");
+console.log(date11);
+
+
+
 //Completar el header
 export function completarHeader() {
   document.getElementById('word').placeholder = "Buscar...";

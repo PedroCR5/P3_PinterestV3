@@ -32,13 +32,18 @@ export function createCards(imagesList) {
 
     // Información de cada carta
     let imgPersonRoundFile = document.getElementsByClassName(`imgPersonRound`);
-    imgPersonRoundFile.src = "image.user.profile_image.large";
+    //console.log(imgPersonRoundFile);
+    //console.log(image.user.profile_image.large);
+
+    imgPersonRoundFile.src = image.user.profile_image.large;
     // console.log(image.user.profile_image.large);
+    //console.log(imgPersonRoundFile.src);
+
     imgPersonRoundFile.bordercolor = "grey";
     let imgImageDivFile = document.getElementsByClassName(`imgImageDiv`);
     imgImageDivFile.src = `image.urls.thumb`;
     let nameFile = document.getElementsByClassName(`name`);
-    nameFile.src = "aaa000";
+    nameFile.src = 'aaa000';
     nameFile.tex
     let imgCameraFile = document.getElementsByClassName(`camera`);
     imgCameraFile.content = "hola";
