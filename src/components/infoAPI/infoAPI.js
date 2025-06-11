@@ -1,7 +1,7 @@
 import "./infoAPI.css";
 import { createCards } from "../card/Card";
 import { endPoint, accesKey } from "../../../main";
-let imagesList = {}
+export let imagesList = {}
 // Traigo la info de la API y llamo a Card.js para pintar las Cards.
 export async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
@@ -14,5 +14,6 @@ export async function getImages(query) {
   }
   else {
     createCards(imagesList);
+    firstCardInfo(imagesList);
   }
 }

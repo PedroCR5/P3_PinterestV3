@@ -16,28 +16,23 @@ export function pintarHTML() {
       </div>
     </header> 
     <main> 
-    <div class="pruebaContainer">
-            <img class="imgPersonRound1" src = './assets/lupa.png'/>
-            <p id="name1">hola</p>
-            <img class="upImg1" />
-            <p class="date1">fecha</p>
-          </div>
       <div id="notification">
         <h2 class="notificationH2"></h2>
         ${createButton({ size: "s", classInfo: `tryAgain` })}
       </div>
       <div id="containerCards"> </div>
     </main>`;
+  /*   let imgPersonRoundFile1 = document.getElementsByClassName(`imgPersonRound1`);
+    console.log(imgPersonRoundFile1);
+    //console.log(image.user.profile_image.large);
+    imgPersonRoundFile1.width = "400px";
+    imgPersonRoundFile1.height = "400px";
+  
+    imgPersonRoundFile1.src = "./assets/camera.png"; */
 };
 //pruebas
-let imgPersonRoundFile1 = document.getElementsByClassName(`imgPersonRound1`);
-//console.log(imgPersonRoundFile);
-//console.log(image.user.profile_image.large);
-imgPersonRoundFile1.width = "400px";
-imgPersonRoundFile1.height = "400px";
 
-imgPersonRoundFile1.src = './assets/lupa.png';
-console.log(imgPersonRoundFile1.src);
+//console.log(imgPersonRoundFile1.src);
 let name1Text = document.getElementById("name1");
 
 //name1Text.textContent = `ddd`;

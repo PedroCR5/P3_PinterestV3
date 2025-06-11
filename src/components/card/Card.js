@@ -1,5 +1,7 @@
 import { createButton } from "../button/button";
+//import { imagesList } from "../infoAPI/infoAPI";
 import "./card.css";
+
 // Color
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -11,50 +13,32 @@ function getRandomColor() {
 export function createCards(imagesList) {
   document.querySelector("#containerCards").innerHTML = ` `;
   imagesList.forEach(image => {
-
+    let randomColorImg = getRandomColor();
     document.querySelector("#containerCards").innerHTML +=
       `<div class="cardDiv">
-          <div class="cardImgDiv" >
-            <img class="imgImageDiv"/>
-            <div class="initialIconsBox">
+            <img class="imgImageDiv" src=${image.urls.small} loading = "lazy";/>
+            <img class="imgPersonRound" src=${image.user.profile_image.large} style="border-color: ${randomColorImg}" />
+            <p class="name">${image.user.name} </p>
+            <img class="upImg" src="./assets/upImage.png"/>
+            <p class="date">${image.created_at.substring(0, 10)} </p>
+        </div>`;
+  });
+
+  function firstCardInfo() {
+    let imageElements = document.querySelectorAll("cardDiv");
+    let firstImage = imageElements[0];
+    firstImage.innerHTML +=
+      `<div class="initialIconsBox">
               <span class="camera">+${image.user.total_photos}</span>
               ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
               <span class="likes">${image.likes}</span>
-            </div>
-          </div>  
-          <div class="cardBottomPart">
-            <img class="imgPersonRound"/>
-            <p class="name"></p>
-            <img class="upImg" />
-            <p class="date"></p>
-          </div>
-        </div>`;
+            </div>`
+  }
+  firstCardInfo();
 
-    // Información de cada carta
-    let imgPersonRoundFile = document.getElementsByClassName(`imgPersonRound`);
-    //console.log(imgPersonRoundFile);
-    //console.log(image.user.profile_image.large);
-
-    imgPersonRoundFile.src = image.user.profile_image.large;
-    // console.log(image.user.profile_image.large);
-    //console.log(imgPersonRoundFile.src);
-
-    imgPersonRoundFile.bordercolor = "grey";
-    let imgImageDivFile = document.getElementsByClassName(`imgImageDiv`);
-    imgImageDivFile.src = `image.urls.thumb`;
-    let nameFile = document.getElementsByClassName(`name`);
-    nameFile.src = 'aaa000';
-    nameFile.tex
-    let imgCameraFile = document.getElementsByClassName(`camera`);
-    imgCameraFile.content = "hola";
-    /*  ${ image.user.name }; */
-
-
-    /* ${image.created_at.substring(0, 10)} 
-     */
-  });
-
-  /*   src="${image.user.profile_image.large}" style="border-color: ${randomColorImg}" */
+  /*   src="${image.user.profile_image.large}" style="border-color: ${randomColorImg}" 
+  
+  */
   //Elementos comunes a las Cards
   /*   let upImgFile = document.getElementsByClassName(`upImg`);
     upImgFile.src = "./assets/upImage.png";
@@ -85,7 +69,7 @@ export function createCards(imagesList) {
            </div>  
            <div class="cardBottomPart">
              <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imagesList[i].user.profile_image.large}" style="border-color: ${randomColorImg}"/>
-             <p class="cardPUser${i} name">${imagesList[i].user.name} </p>
+             <p class="cardPUser${i} name"></p>
              <img src="./assets/upImage.png" class="upImg" />
              <p class="cardPDate${i} date">${imagesList[i].created_at.substring(0, 10)} </p>
            </div>

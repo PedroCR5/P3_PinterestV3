@@ -60,10 +60,10 @@ La única funcionalidad que está bien es el tema de las peticiones. El resto, s
 Empezamos por el main.js:
 
 //Tienes variables como element1Src, intertext… que no deberían estar ahí.
-El pintado de la página principal lo estás haciendo todo con template literals, que se puede, pero tienes muchos fallos: repetición de IDs, clases mal puestas, semántica poco clara…
-Un punto positivo es tu componente createButton, que no está mal.
-Luego tienes la lógica del modal de error y el buscador, que más o menos vale.
-No se entiende muy bien por qué haces dos fetch: uno para la info de la persona y otro para las imágenes.
+//El pintado de la página principal lo estás haciendo todo con template literals, que se puede, pero tienes muchos fallos: repetición de IDs, clases mal puestas, semántica poco clara…
+//Un punto positivo es tu componente createButton, que no está mal.
+//Luego tienes la lógica del modal de error y el buscador, que más o menos vale.
+//No se entiende muy bien por qué haces dos fetch: uno para la info de la persona y otro para las imágenes.
 
 Pero lo más preocupante es cómo estás iterando los datos de las peticiones:
 
