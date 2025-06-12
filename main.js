@@ -112,5 +112,6 @@ Un saludo! */
 //? Modal meterle info svh
 //? Animación para algún img, @keyframes
 //? que no salga erroe al pinchar en logo Pinterest
-//? eliminar clases innecesarias
+// //eliminar clases innecesarias
 //? simplificar los css
+//? Maximo de los iconos unos 80px x 80px

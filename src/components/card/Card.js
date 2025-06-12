@@ -19,22 +19,23 @@ export function createCards(imagesList) {
             <img class="imgImageDiv" src=${image.urls.small} loading = "lazy";/>
             <img class="imgPersonRound" src=${image.user.profile_image.large} style="border-color: ${randomColorImg}" />
             <p class="name">${image.user.name} </p>
-            <img class="upImg" src="./assets/upImage.png"/>
             <p class="date">${image.created_at.substring(0, 10)} </p>
+            <img class="upImg" src="./assets/upImage.png"/>
+            
         </div>`;
   });
 
-  function firstCardInfo() {
-    let imageElements = document.querySelectorAll("cardDiv");
-    let firstImage = imageElements[0];
-    firstImage.innerHTML +=
-      `<div class="initialIconsBox">
-              <span class="camera">+${image.user.total_photos}</span>
-              ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
-              <span class="likes">${image.likes}</span>
-            </div>`
-  }
-  firstCardInfo();
+  /*   function firstCardInfo() {
+      let imageElements = document.querySelectorAll("cardDiv");
+      let firstImage = imageElements[0];
+      firstImage.innerHTML +=
+        `<div class="initialIconsBox">
+                <span class="camera">+${image.user.total_photos}</span>
+                ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
+                <span class="likes">${image.likes}</span>
+              </div>`
+    }
+    firstCardInfo(); */
 
   /*   src="${image.user.profile_image.large}" style="border-color: ${randomColorImg}" 
   

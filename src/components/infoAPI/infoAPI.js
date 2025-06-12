@@ -14,6 +14,6 @@ export async function getImages(query) {
   }
   else {
     createCards(imagesList);
-    firstCardInfo(imagesList);
+    //firstCardInfo(imagesList);
   }
 }
