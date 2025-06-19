@@ -36,15 +36,17 @@ export function pintarHTML() {
 let name1Text = document.getElementById("name1");
 
 //name1Text.textContent = `ddd`;
-console.log(name1Text);
+//console.log(name1Text);
 
 let date11 = document.getElementsByClassName("name1");
 console.log(date11);
-
-
 
 //Completar el header
 export function completarHeader() {
   document.getElementById('word').placeholder = "Buscar...";
 }
+
+
+
+
 

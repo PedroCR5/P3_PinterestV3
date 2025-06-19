@@ -21,10 +21,18 @@ export function createCards(imagesList) {
             <p class="name">${image.user.name} </p>
             <p class="date">${image.created_at.substring(0, 10)} </p>
             <img class="upImg" src="./assets/upImage.png"/>
-            
         </div>`;
   });
-
+  //Primer Card Div
+const primerCardDiv = document.getElementsByTagName('div')[5];
+console.log(primerCardDiv);
+primerCardDiv.innerHTML +=
+     `<div class="initialIconsBox">
+                <span class="camera">+${imagesList[0].user.total_photos}</span>
+                ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
+                <span class="likes">${imagesList[0].likes}</span>
+              </div>`
+}
   /*   function firstCardInfo() {
       let imageElements = document.querySelectorAll("cardDiv");
       let firstImage = imageElements[0];
@@ -83,7 +91,7 @@ export function createCards(imagesList) {
      imgButtonCamera.innerHTML = `<img class="imgCamera" src="./assets/camera.png" alt="pinterest">
            <span class="likesHeart">+${imagesList[i].user.total_photos}</span>`
    } */
-}
+
 /* 
 const CardTemplate = (result) => {
   return `

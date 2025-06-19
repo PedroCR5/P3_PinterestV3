@@ -106,12 +106,12 @@ Así cada tarjeta tendrá siempre la misma estructura, y no necesitas más lógi
 
 La primera búsqueda que haces funciona, no es la más eficiente, pero al menos va. Aun así, te recomendaría repasar el módulo y mirar bien las clases en directo, te vendría muy bien.
 
-Te vuelvo a corregir cuando implementes algo más parecido a lo que te acabo de dejar. Investiga un poco más, y ánimo con ello.
+//Te vuelvo a corregir cuando implementes algo más parecido a lo que te acabo de dejar. Investiga un poco más, y ánimo con ello.
 
-Un saludo! */
+//Un saludo! */
 //? Modal meterle info svh
 //? Animación para algún img, @keyframes
-//? que no salga erroe al pinchar en logo Pinterest
+//? que no salga error al pinchar en logo Pinterest
 // //eliminar clases innecesarias
 //? simplificar los css
 //? Maximo de los iconos unos 80px x 80px
