@@ -25,6 +25,7 @@ export function createCards(imagesList) {
   });
   //Primer Card Div
 const primerCardDiv = document.getElementsByTagName('div')[5];
+primerCardDiv.className="cardDiv holahola"
 console.log(primerCardDiv);
 primerCardDiv.innerHTML +=
      `<div class="initialIconsBox">
@@ -32,6 +33,14 @@ primerCardDiv.innerHTML +=
                 ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
                 <span class="likes">${imagesList[0].likes}</span>
               </div>`
+
+/*               const imgElement = document.querySelector('img');
+const newDiv = document.createElement('div');
+newDiv.textContent = 'Este es un nuevo div';
+imgElement.parentNode.insertBefore(newDiv, imgElement.nextSibling); */
+
+
+
 }
   /*   function firstCardInfo() {
       let imageElements = document.querySelectorAll("cardDiv");

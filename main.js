@@ -43,7 +43,10 @@ document.querySelector(`.iconePinterest`).onclick = function () {
   };
 };
 
-
+const nuevoDiv1 = document.createElement("div");
+const mainApp = document.getElementById("app");
+mainApp.appendChild(nuevoDiv1);
+nuevoDiv1.innerHTML = 'hola'
 /* <div class="desktopHeader">
       ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial buttonInfo1` })}
       ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton buttonInfo1` })}
