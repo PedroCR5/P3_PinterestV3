@@ -177,3 +177,8 @@
   border-width: 10px;
   margin-top: -30%;
 } */
+.initialIconsBox {
+  position: absolute;
+  top: 5%;
+  display: flex;
+}
