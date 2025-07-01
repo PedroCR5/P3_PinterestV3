@@ -29,9 +29,12 @@ primerCardDiv.className="cardDiv holahola"
 console.log(primerCardDiv);
 primerCardDiv.innerHTML +=
      `<div class="initialIconsBox">
-                <span class="camera">+${imagesList[0].user.total_photos}</span>
+                <span class="camera"></span>
+                <span class="cameraNumber">+${imagesList[0].user.total_photos}</span>
                 ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
-                <span class="likes">${imagesList[0].likes}</span>
+                <span class="likes"></span>
+                <span class="likesNumber">${imagesList[0].likes}</span>
+
               </div>`
 
 /*               const imgElement = document.querySelector('img');
