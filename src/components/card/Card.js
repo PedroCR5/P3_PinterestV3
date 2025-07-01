@@ -31,7 +31,7 @@ primerCardDiv.innerHTML +=
      `<div class="initialIconsBox">
                 <span class="camera"></span>
                 <span class="cameraNumber">+${imagesList[0].user.total_photos}</span>
-                ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center` })}
+                ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off` })}
                 <span class="likes"></span>
                 <span class="likesNumber">${imagesList[0].likes}</span>
 
