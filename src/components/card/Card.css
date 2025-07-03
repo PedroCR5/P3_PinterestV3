@@ -17,6 +17,9 @@
   border-radius: 10%;
   /* object-fit: contain; */
 }
+.holahola {
+  position: relative;
+}
 .holahola > .imgImageDiv {
   opacity: 0.5;
 }
@@ -31,13 +34,19 @@
   /* width: fit-content; */
   /* height: 11%; */
   opacity: 100%;
-  top: 15%;
+  top: 5%;
   /* left: 10%; */
 
   /*   height: max-content; */
   opacity: 1;
   flex-direction: row;
-  /* justify-content: center; */
+  justify-content: center;
+  align-items: center;
+}
+
+.cameraLikesContainer {
+  display: flex;
+  flex-direction: column;
 }
 /* position: absolute;
   display: flex;
