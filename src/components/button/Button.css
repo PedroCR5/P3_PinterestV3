@@ -46,9 +46,9 @@ button {
   background-color: var(--rtc-bgColor3);
   padding-left: 30%;
   padding-right: 30%;
-  width: 150%;
   border-radius: 50%;
-
+  margin: 10%;
+  width: min-content;
   /*   color: var(--rtc-text-2);
   background-color: var(--rtc-bgColor3);
   padding-left: 30%;
