@@ -118,3 +118,5 @@ La primera búsqueda que haces funciona, no es la más eficiente, pero al menos 
 // //eliminar clases innecesarias
 //? simplificar los css
 //? Maximo de los iconos unos 80px x 80px
+//? Usar los roots de styles en los css
+//?Cambiar holahola por otro nombre 
