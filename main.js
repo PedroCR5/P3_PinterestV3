@@ -43,20 +43,9 @@ document.querySelector(`.iconePinterest`).onclick = function () {
   };
 };
 
-const nuevoDiv1 = document.createElement("div");
-const mainApp = document.getElementById("app");
-mainApp.appendChild(nuevoDiv1);
-nuevoDiv1.innerHTML = 'hola'
-/* <div class="desktopHeader">
-      ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial buttonInfo1` })}
-      ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton buttonInfo1` })}
-      ${createButton({ texto: "Crear", size: "s", classInfo: `desktopButton buttonInfo1` })}
-    </div> */
 
 
 /* Buenas Pedro,
-
-Estoy revisando tu proyecto por segunda vez y veo que todavía no estás dando con lo esencial. Da la sensación de que tienes bastante confusión con varios conceptos, y no termino de entender de dónde los has sacado, pero la mayoría están mal enfocados.
 
 La única funcionalidad que está bien es el tema de las peticiones. El resto, sinceramente, no está correcto.
 
@@ -112,11 +101,12 @@ La primera búsqueda que haces funciona, no es la más eficiente, pero al menos 
 //Te vuelvo a corregir cuando implementes algo más parecido a lo que te acabo de dejar. Investiga un poco más, y ánimo con ello.
 
 //Un saludo! */
-//? Modal meterle info svh
-//? Animación para algún img, @keyframes
-//? que no salga error al pinchar en logo Pinterest
+//// Modal meterle info svh
+//// Animación para algún img, @keyframes
+//// que no salga error al pinchar en logo Pinterest
 // //eliminar clases innecesarias
 //? simplificar los css
-//? Maximo de los iconos unos 80px x 80px
+//// Maximo de los iconos unos 80px x 80px
 //? Usar los roots de styles en los css
-//?Cambiar holahola por otro nombre 
+//?Cambiar holahola por otro nombre
+//? comprobar que todo lo de css está en js

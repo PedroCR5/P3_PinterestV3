@@ -22,7 +22,8 @@ export function createCards(imagesList) {
             <img class="upImg" src="./assets/upImage.png"/>
         </div>`;
   });
-  //Primer Card Div
+
+  // Información especial de la primera carta
   const primerCardDiv = document.getElementsByTagName('div')[5];
   primerCardDiv.className = "cardDiv holahola"
   console.log(primerCardDiv);

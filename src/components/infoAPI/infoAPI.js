@@ -8,9 +8,12 @@ export async function getImages(query) {
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
   if (imagesList.length === 0) {
-    getImages('gatos');
+
     const modalNotification = document.getElementById('notification');
     modalNotification.style.display = 'flex';
+    modalNotification.className = 'on0';
+    console.log(modalNotification)
+    getImages('gatos');
   }
   else {
     createCards(imagesList);
