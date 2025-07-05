@@ -8,6 +8,7 @@ export async function getImages(query) {
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
   if (imagesList.length === 0) {
+    console.log(imagesList)
 
     const modalNotification = document.getElementById('notification');
     modalNotification.style.display = 'flex';
@@ -16,7 +17,9 @@ export async function getImages(query) {
     getImages('gatos');
   }
   else {
+    console.log("ok")
     createCards(imagesList);
+
     //firstCardInfo(imagesList);
   }
 }
