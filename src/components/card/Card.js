@@ -11,6 +11,7 @@ function getRandomColor() {
 // Función crear cartas
 export function createCards(imagesList) {
   document.querySelector("#containerCards").innerHTML = ` `;
+  // Pinto todas las cartas
   imagesList.forEach(image => {
     let randomColorImg = getRandomColor();
     document.querySelector("#containerCards").innerHTML +=
@@ -25,15 +26,14 @@ export function createCards(imagesList) {
 
   // Información especial de la primera carta
   const primerCardDiv = document.getElementsByTagName('div')[5];
-  primerCardDiv.className = "cardDiv holahola"
-  console.log(primerCardDiv);
+  primerCardDiv.className = "cardDiv firstCardDiv"
   primerCardDiv.innerHTML +=
     `<div class="initialIconsBox">
         <div class="cameraLikesContainer">
           <span class="camera"></span>
           <span class="cameraNumber">+${imagesList[0].user.total_photos}</span>
         </div>
-          ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off` })}
+          ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar` })}
         <div class="cameraLikesContainer">
            <span class="likes"></span>
             <span class="likesNumber">${imagesList[0].likes}</span>

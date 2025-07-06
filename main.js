@@ -43,70 +43,14 @@ document.querySelector(`.iconePinterest`).onclick = function () {
   };
 };
 
+//// simplificar los css
+////Usar los roots de styles en los css
+//// comprobar que todo lo de css está en js
+//// img heart y camara mejorar
+//// eliminar css info
+//// poner roots usadas
+//// comprobar distintos moviles
+//// la D no empequeñece
+//? poner fuente
+//? Separar responsive la infor init box
 
-
-/* Buenas Pedro,
-
-La única funcionalidad que está bien es el tema de las peticiones. El resto, sinceramente, no está correcto.
-
-Empezamos por el main.js:
-
-//Tienes variables como element1Src, intertext… que no deberían estar ahí.
-//El pintado de la página principal lo estás haciendo todo con template literals, que se puede, pero tienes muchos fallos: repetición de IDs, clases mal puestas, semántica poco clara…
-//Un punto positivo es tu componente createButton, que no está mal.
-//Luego tienes la lógica del modal de error y el buscador, que más o menos vale.
-//No se entiende muy bien por qué haces dos fetch: uno para la info de la persona y otro para las imágenes.
-
-Pero lo más preocupante es cómo estás iterando los datos de las peticiones:
-
-Estás haciendo la iteración dentro de la función, pasándole el resultado directamente. Eso ya es raro, pero vale, podría pasar. El problema es cómo lo haces: usas un for loop, concatenas todo mezclando lógica de pintado con botones, backgrounds, dejas un img vacío pero lo creas igual… Coges fechas, haces substrings, botones de like, cámara… todo metido a la vez, sin orden ni claridad.
-
-//Y luego haces dos loops, uno de 4 y otro de 10, que sinceramente, sigo sin entender para qué.
-
-Te voy a resumir cómo deberías plantearlo desde la HOME y, sobre todo, desde el punto en el que recibes los datos. La API te devuelve 10 elementos ahora, y deberías pintarlos con una iteración limpia y coherente, usando los datos originales de forma simple.
-
-1. Explora siempre con un console.log el resultado de la petición
-Mira lo que te devuelve la llamada. Por ejemplo:
-
-data
-data
-777×618 35.6 KB
-Tienes un montón de datos: alt de las imágenes, blurhash, colores, descripciones, likes, usuario, nombre completo, ubicación… puedes usar todo eso directamente.
-
-2. Crea un template reutilizable
-Una función sencilla que pinte cada resultado de forma homogénea:
-
-const CardTemplate = (result) => {
-  return `
-    <div class="card">
-      <img src="${result.urls.small}" alt="${result.alt_description}">
-      <div class="card-info">
-        <h3>${result.user.name}</h3>
-        <p>${result.description || 'No description available'}</p>
-        <span>${result.likes} likes</span>
-      </div>
-    </div>
-  `;
-}
-3. Itera de forma clara
-Cuando recibas los datos:
-
-results.forEach(result => {
-  container.innerHTML += CardTemplate(result);
-});
-Así cada tarjeta tendrá siempre la misma estructura, y no necesitas más lógica de la cuenta.
-
-La primera búsqueda que haces funciona, no es la más eficiente, pero al menos va. Aun así, te recomendaría repasar el módulo y mirar bien las clases en directo, te vendría muy bien.
-
-//Te vuelvo a corregir cuando implementes algo más parecido a lo que te acabo de dejar. Investiga un poco más, y ánimo con ello.
-
-//Un saludo! */
-//// Modal meterle info svh
-//// Animación para algún img, @keyframes
-//// que no salga error al pinchar en logo Pinterest
-// //eliminar clases innecesarias
-//? simplificar los css
-//// Maximo de los iconos unos 80px x 80px
-//? Usar los roots de styles en los css
-//?Cambiar holahola por otro nombre
-//? comprobar que todo lo de css está en js

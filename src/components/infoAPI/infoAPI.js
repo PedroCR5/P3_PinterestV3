@@ -7,19 +7,15 @@ export async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
+  //Si no se encuentra ningún resultado, pintamos resultado de gatos y ejecutamos el aviso.
+  //Pero ahora siempre se envía un resultado desde la API se escriba lo que se escriba.
   if (imagesList.length === 0) {
-    console.log(imagesList)
-
     const modalNotification = document.getElementById('notification');
     modalNotification.style.display = 'flex';
-    modalNotification.className = 'on0';
-    console.log(modalNotification)
     getImages('gatos');
   }
+  //Si hay algún resultado creamos las cartas.
   else {
-    console.log("ok")
     createCards(imagesList);
-
-    //firstCardInfo(imagesList);
   }
 }
