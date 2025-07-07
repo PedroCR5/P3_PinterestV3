@@ -42,15 +42,3 @@ document.querySelector(`.iconePinterest`).onclick = function () {
     getImages(firstWord)
   };
 };
-
-//// simplificar los css
-////Usar los roots de styles en los css
-//// comprobar que todo lo de css está en js
-//// img heart y camara mejorar
-//// eliminar css info
-//// poner roots usadas
-//// comprobar distintos moviles
-//// la D no empequeñece
-//? poner fuente
-//? Separar responsive la infor init box
-

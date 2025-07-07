@@ -32,7 +32,7 @@
   align-items: center;
   top: 5%;
   opacity: 1;
-  width: 60%;
+  width: 100%;
 }
 .cameraLikesContainer {
   display: flex;
